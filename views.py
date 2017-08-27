@@ -3,6 +3,7 @@ import datetime
 import os
 import sys
 import json
+import urllib
 import settings
 import database
 
@@ -12,6 +13,7 @@ def _load_template(template, dataset):
 
 
 def post_comment(post_data, template='comment.html'):
+    post_data = {k: v[0] for k, v in urllib.parse.parse_qs(post_data.decode()).items()}
     print('post_comment', post_data)
 
 

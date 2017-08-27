@@ -39,7 +39,7 @@
                         /* for (var i in cities) {
                             text += "<option value='" + i + "'>" + cities[i] + "</option>";
                         } */
-                        document.comment.villages.innerHTML = cities;
+                        document.comment.village_id.innerHTML = cities;
                     }
                 }
             };
@@ -49,13 +49,13 @@
 
 <body>
     <form name="comment" action="/comment/" method="POST">
-        <div>Имя[ Отчество]<input type="text" id="user_name" placeholder="Имя Отчество" required="required" /></div>
-        <div>Фамилие<input type="text" id="user_last_name" placeholder="Фамилие" required="required" /></div>
+        <div>Имя[ Отчество]<input type="text" name="user_name" placeholder="Имя Отчество" required="required" /></div>
+        <div>Фамилие<input type="text" name="user_last_name" placeholder="Фамилие" required="required" /></div>
         <div>Регион:{% regions %}</div>
-        <div>Населённый пункт:<select id="village_name" name="villages" value=""></select></div>
-        <div>Телефон:<input type="text" id="user_phone" placeholder="(AAA)BBBCCDD" pattern="\([0-9]{3}\)[0-9]{7}" /></div>
-        <div>e-mail:<input type="text" id="user_email" placeholder="aaa@bbb.ccc" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="required" /></div>
-        <div>Комментарий:<input type="textarea" id="comment" required="required" /></div>
+        <div>Населённый пункт:<select id="village_name" name="village_id" value=""></select></div>
+        <div>Телефон:<input type="text" name="user_phone" placeholder="(AAA)BBBCCDD" pattern="\([0-9]{3}\)[0-9]{7}" /></div>
+        <div>e-mail:<input type="text" name="user_email" placeholder="aaa@bbb.ccc" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="required" /></div>
+        <div>Комментарий:<input type="textarea" name="comment" required="required" /></div>
         <div><input type="submit" value="Отправить" /></div>
     </form>
 </body>
