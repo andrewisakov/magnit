@@ -10,6 +10,7 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
+
 def get_sql(name):
     name += '.sql' if not name.endswith('.sql') else ''
     try:
