@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+APP_NAME	../settings.py	/^APP_NAME = ''$/;"	kind:variable	line:3
+DB_NAME	../settings.py	/^DB_NAME = 'magnit.sqlite'$/;"	kind:variable	line:2
+HTML_PATH	../settings.py	/^HTML_PATH = 'html'$/;"	kind:variable	line:5
+ROUTES	../main.py	/^ROUTES = {$/;"	kind:variable	line:7
+SQL_PATH	../settings.py	/^SQL_PATH = 'sql'$/;"	kind:variable	line:4
+_comment_row	../views.py	/^def _comment_row(comment):$/;"	kind:function	line:10
+add_comment	../database.py	/^def add_comment(comment):$/;"	kind:function	line:114
+add_region	../database.py	/^def add_region(region_name, villages=[]):$/;"	kind:function	line:91
+add_villages	../database.py	/^def add_villages(region_id, villages):$/;"	kind:function	line:75
+application	../main.py	/^def application(environ, start_response):$/;"	kind:function	line:20
+comment	../views.py	/^def comment(template, post_body):$/;"	kind:function	line:7
+create_database	../database.py	/^def create_database():$/;"	kind:function	line:22
+database.py	../database.py	1;"	kind:file	line:1
+dict_factory	../database.py	/^def dict_factory(cursor, row):$/;"	kind:function	line:7
+get_comments	../database.py	/^def get_comments():$/;"	kind:function	line:121
+get_regions	../database.py	/^def get_regions():$/;"	kind:function	line:39
+get_sql	../database.py	/^def get_sql(name):$/;"	kind:function	line:13
+get_villages	../database.py	/^def get_villages(region_id=None):$/;"	kind:function	line:53
+main.py	../main.py	1;"	kind:file	line:1
+routes.py	../routes.py	1;"	kind:file	line:1
+select_user	../database.py	/^def select_user(email):$/;"	kind:function	line:69
+settings.py	../settings.py	1;"	kind:file	line:1
+stat	../views.py	/^def stat():$/;"	kind:function	line:27
+view	../views.py	/^def view(template):$/;"	kind:function	line:20
+views.py	../views.py	1;"	kind:file	line:1
