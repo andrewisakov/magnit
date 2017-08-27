@@ -12,7 +12,7 @@ def _load_template(template, dataset):
 
 
 def post_comment(post_data, template='comment.html'):
-    print('post_comment', post_comment)
+    print('post_comment', post_data)
 
 
 def comment(request_body, template='comment.html'):
