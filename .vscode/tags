@@ -5,28 +5,39 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	//
-APP_NAME	../settings.py	/^APP_NAME = ''$/;"	kind:variable	line:3
-DB_NAME	../settings.py	/^DB_NAME = 'magnit.sqlite'$/;"	kind:variable	line:2
-HTML_PATH	../settings.py	/^HTML_PATH = 'html'$/;"	kind:variable	line:5
-ROUTES	../main.py	/^ROUTES = {$/;"	kind:variable	line:7
-SQL_PATH	../settings.py	/^SQL_PATH = 'sql'$/;"	kind:variable	line:4
-_comment_row	../views.py	/^def _comment_row(comment):$/;"	kind:function	line:10
-add_comment	../database.py	/^def add_comment(comment):$/;"	kind:function	line:114
-add_region	../database.py	/^def add_region(region_name, villages=[]):$/;"	kind:function	line:91
-add_villages	../database.py	/^def add_villages(region_id, villages):$/;"	kind:function	line:75
-application	../main.py	/^def application(environ, start_response):$/;"	kind:function	line:20
-comment	../views.py	/^def comment(template, post_body):$/;"	kind:function	line:7
-create_database	../database.py	/^def create_database():$/;"	kind:function	line:22
+APP_NAME	../settings.py	/^APP_NAME = ''$/;"	kind:variable	line:7
+BASE_DIR	../settings.py	/^BASE_DIR = os.path.dirname(sys.argv[0])$/;"	kind:variable	line:4
+DB_NAME	../settings.py	/^DB_NAME = os.path.join(BASE_DIR, 'magnit.sqlite')$/;"	kind:variable	line:6
+ROUTES	../main.py	/^ROUTES = {$/;"	kind:variable	line:8
+SQL_PATH	../settings.py	/^SQL_PATH = os.path.join(BASE_DIR, 'sql\/')$/;"	kind:variable	line:8
+TEMPLATES	../settings.py	/^TEMPLATES = os.path.join(BASE_DIR, 'html\/')$/;"	kind:variable	line:9
+_comment_row	../views.py	/^def _comment_row(comment, template='comment_row.html'):$/;"	kind:function	line:81
+_load_template	../views.py	/^def _load_template(template, dataset):$/;"	kind:function	line:11
+_region	../views.py	/^def _region(region, template='region.html'):$/;"	kind:function	line:63
+_village	../views.py	/^def _village(village, template='village.html'):$/;"	kind:function	line:43
+add_comment	../database.py	/^def add_comment(comment):$/;"	kind:function	line:117
+add_region	../database.py	/^def add_region(region_name, villages=[]):$/;"	kind:function	line:94
+add_villages	../database.py	/^def add_villages(region_id, villages):$/;"	kind:function	line:78
+application	../main.py	/^def application(environ, start_response):$/;"	kind:function	line:22
+comment	../views.py	/^def comment(template='comment.html'):$/;"	kind:function	line:34
+create_database	../database.py	/^def create_database():$/;"	kind:function	line:23
 database.py	../database.py	1;"	kind:file	line:1
+delete_comment	../database.py	/^def delete_comment(comment_id):$/;"	kind:function	line:150
+delete_comment	../views.py	/^def delete_comment(request):$/;"	kind:function	line:20
 dict_factory	../database.py	/^def dict_factory(cursor, row):$/;"	kind:function	line:7
-get_comments	../database.py	/^def get_comments():$/;"	kind:function	line:121
-get_regions	../database.py	/^def get_regions():$/;"	kind:function	line:39
-get_sql	../database.py	/^def get_sql(name):$/;"	kind:function	line:13
-get_villages	../database.py	/^def get_villages(region_id=None):$/;"	kind:function	line:53
+get_comments	../database.py	/^def get_comments():$/;"	kind:function	line:124
+get_regions	../database.py	/^def get_regions():$/;"	kind:function	line:40
+get_sql	../database.py	/^def get_sql(name):$/;"	kind:function	line:14
+get_villages	../database.py	/^def get_villages(region_id=None):$/;"	kind:function	line:55
+insert_comment	../database.py	/^def insert_comment(comment_data):$/;"	kind:function	line:138
 main.py	../main.py	1;"	kind:file	line:1
+post_comment	../views.py	/^def post_comment(post_data, template='comment.html'):$/;"	kind:function	line:27
+redirect	../views.py	/^def redirect(target='\/view\/'):$/;"	kind:function	line:15
+regions	../views.py	/^def regions(template='regions.html'):$/;"	kind:function	line:72
 routes.py	../routes.py	1;"	kind:file	line:1
-select_user	../database.py	/^def select_user(email):$/;"	kind:function	line:69
+select_user	../database.py	/^def select_user(email):$/;"	kind:function	line:72
 settings.py	../settings.py	1;"	kind:file	line:1
-stat	../views.py	/^def stat():$/;"	kind:function	line:27
-view	../views.py	/^def view(template):$/;"	kind:function	line:20
+stat	../views.py	/^def stat():$/;"	kind:function	line:100
+view	../views.py	/^def view(template='view.html'):$/;"	kind:function	line:91
 views.py	../views.py	1;"	kind:file	line:1
+villages	../views.py	/^def villages(request, template='villages.html'):$/;"	kind:function	line:52

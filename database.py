@@ -29,6 +29,7 @@ def create_database():
                 c.execute(create_table)
             c.close()
             db.commit()
+        # Заполнение примерными данными
         add_region('Краснодарский край', ['Краснодар', 'Кропоткин', 'Славянск'])
         add_region('Ростовская область', ['Ростов', 'Шахты', 'Батайск'])
         add_region('Ставропольский край', ['Ставрополь', 'Пятигорск', 'Кисловодск'])
@@ -135,11 +136,63 @@ def get_comments():
             print('get_comments:', e)
 
 
+def insert_comment(comment_data):
+    with sqlite3.connect(settings.DB_NAME) as db:
+        try:
+            c = db.cursor()
+            c.execute(get_sql('insert_comment'), comment_data)
+            c.close()
+            db.commit()
+        except Exception as e:
+            db.rollback()
+            print('insert_comment:', e)
+
+
+def delete_comment(comment_id):
+    # print('delete_comment:', comment_id)
+    with sqlite3.connect(settings.DB_NAME) as db:
+        try:
+            c = db.cursor()
+            c.execute(get_sql('delete_comment'), comment_id)
+            c.close()
+            db.commit()
+        except Exception as e:
+            db.rollback()
+            print('delete_comment:', e)
+
+
+def get_stat():
+    with sqlite3.connect(settings.DB_NAME) as db:
+        try:
+            db.row_factory = dict_factory
+            c = db.cursor()
+            c.execute(get_sql('select_stat'), {'stat_count': settings.STAT_COUNT})
+            comments = c.fetchall()
+            c.close()
+            for c in comments:
+                yield c
+        except Exception as e:
+            print('get_stat:', e)
+
+
+def get_stat_region(select_args):
+    select_args.update(stat_count=settings.STAT_COUNT)
+    with sqlite3.connect(settings.DB_NAME) as db:
+        try:
+            db.row_factory = dict_factory
+            c = db.cursor()
+            c.execute(get_sql('select_stat_region'), select_args)
+            comments = c.fetchall()
+            c.close()
+            for c in comments:
+                yield c
+        except Exception as e:
+            print('get_stat_region:', e)
+
+
 if __name__ == '__main__':
     create_database()
-    for r_id, r_name in get_regions():
-        print(r_id, r_name)
-        for v_id, v_name in get_villages(r_id):
-            print('\t', v_id, v_name)
-    for c in get_comments():
+    for c in get_stat():
         print(c)
+        for v in get_stat_region({'region_id': c['region_id']}):
+            print('\t', v)
